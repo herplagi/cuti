@@ -1,42 +1,42 @@
 <?php
-	include("sess_check.php");
+include("sess_check.php");
 
-	$id=$sess_pegawaiid;
+$id = $sess_pegawaiid;
 
-	
-	$sql_g = "SELECT * FROM employee WHERE npp='$id'";
-	$ress_g = mysqli_query($conn, $sql_g);
-	$res = mysqli_fetch_array($ress_g);
-	
-	$sqlb = "SELECT * FROM cuti WHERE npp='$id' AND stt_cuti!='Rejected'";
-	$ressb = mysqli_query($conn, $sqlb);
-	$b = mysqli_num_rows($ressb);
 
-	$sqlc = "SELECT * FROM cuti WHERE npp='$id' AND stt_cuti='Rejected'";
-	$ressc = mysqli_query($conn, $sqlc);
-	$c = mysqli_num_rows($ressc);
+$sql_g = "SELECT * FROM employee WHERE npp='$id'";
+$ress_g = mysqli_query($conn, $sql_g);
+$res = mysqli_fetch_array($ress_g);
 
-	$sqla = "SELECT * FROM cuti WHERE npp='$id' AND hrd_app=1";
-	$ressa = mysqli_query($conn, $sqla);
-	$a = mysqli_num_rows($ressa);
+$sqlb = "SELECT * FROM cuti WHERE npp='$id' AND stt_cuti!='Rejected'";
+$ressb = mysqli_query($conn, $sqlb);
+$b = mysqli_num_rows($ressb);
 
-	// deskripsi halaman
-	$pagedesc = "Beranda";
-	include("layout_top.php");
-	include("dist/function/format_rupiah.php");
+$sqlc = "SELECT * FROM cuti WHERE npp='$id' AND stt_cuti='Rejected'";
+$ressc = mysqli_query($conn, $sqlc);
+$c = mysqli_num_rows($ressc);
+
+$sqla = "SELECT * FROM cuti WHERE npp='$id' AND hrd_app=1";
+$ressa = mysqli_query($conn, $sqla);
+$a = mysqli_num_rows($ressa);
+
+// deskripsi halaman
+$pagedesc = "Beranda";
+include("layout_top.php");
+include("dist/function/format_rupiah.php");
 ?>
 <!-- top of file -->
 		<!-- Page Content -->
 		<div id="page-wrapper">
-            <div class="container-fluid">
+			<div class="container-fluid">
 				<div class="row">
 					<div class="col-lg-12">
 						<form class="form-horizontal">
 							<div class="panel panel-default">
 								<div class="panel-body">
-								<h2 align="center">Selamat Datang, <?php echo $res['nama_emp'];?>!</h2>
+								<h2 align="center">Selamat Datang, <?php echo $res['nama_emp']; ?>!</h2>
 								<hr/>
-								<center><img src="../foto/<?php echo $res['foto_emp']?>" width="120px"></center>
+								<center><img src="../foto/<?php echo $res['foto_emp'] ?>" width="120px"></center>
 								<hr/>
 								</div>
 							</div><!-- /.panel -->
@@ -117,8 +117,8 @@
 				</div><!-- /.row -->
 				
 			</div><!-- /.container-fluid -->
-        </div><!-- /#page-wrapper -->
+		</div><!-- /#page-wrapper -->
 <!-- bottom of file -->
 <?php
-	include("layout_bottom.php");
+include("layout_bottom.php");
 ?>
