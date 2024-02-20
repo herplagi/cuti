@@ -73,8 +73,8 @@
 					<div class="clear-both"></div>
 				</a>
 				<a class="navbar-brand visible-xs" href="index.php">
-					<img src="libs/images/isk-logo.jpg" alt="brand" width="32" class="float-left image-brand">
-					<div class="float-right">&nbsp;<strong>KKSP</strong></div>
+					<img src="libs/images/KKSP.png" alt="brand" width="32" class="float-left image-brand">
+					<div class="float-right">&nbsp;<strong>PT. ISK Indonesia</strong></div>
 					<div class="clear-both"></div>
 				</a>
 			</div><!-- /.navbar-header -->

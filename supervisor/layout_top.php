@@ -26,7 +26,7 @@
 
 	<title>Sistem Informasi Pengajuan Cuti Online PT. ISK Indonesia - <?php echo $pagedesc ?></title>
 
-	<link href="libs/images/isk-logo.jpg" rel="icon" type="images/x-icon">
+	<link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
 
     <!-- Bootstrap Core CSS -->
 	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -73,12 +73,12 @@
 					<span class="icon-bar"></span>
 				</button>
 				<a class="navbar-brand hidden-xs" href="index.php">
-					<img src="../libs/images/isk-logo.jpg" alt="brand" width="32" class="float-left image-brand">
+					<img src="../libs/images/KKSP.png" alt="brand" width="32" class="float-left image-brand">
 					<div class="float-right">&nbsp;<strong>PT. ISK Indonesia</strong></div>
 					<div class="clear-both"></div>
 				</a>
 				<a class="navbar-brand visible-xs" href="index.php">
-					<img src="../libs/images/isk-logo.jpg" alt="brand" width="32" class="float-left image-brand">
+					<img src="../libs/images/KKSP.png" alt="brand" width="32" class="float-left image-brand">
 					<div class="float-right">&nbsp;<strong>PT. ISK Indonesia</strong></div>
 					<div class="clear-both"></div>
 				</a>

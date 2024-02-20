@@ -344,13 +344,13 @@ table.dataTable thead .sorting:after {
 }
 
 .panel-yellow {
-    border-color: #f0ad4e;
+    border-color: #000;
 }
 
 .panel-yellow .panel-heading {
     border-color: #f0ad4e;
     color: #fff;
-    background-color: #f0ad4e;
+    background-color: #000;
 }
 
 .panel-yellow a {

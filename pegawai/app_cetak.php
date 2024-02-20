@@ -23,7 +23,7 @@
 
 	<title><?php echo $pagetitle ?></title>
 
-	<link href="libs/images/isk-logo.jpg" rel="icon" type="images/x-icon">
+	<link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
 
 	<!-- Bootstrap Core CSS -->
 	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -53,10 +53,10 @@
 				<tbody>
 					<tr>
 						<td class="text-left" width="20%">
-							<img src="libs/images/isk-logo.jpg" alt="logo-dkm" width="70" />
+							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>PT. ISK INDONESIA</b> <br>
+						<b>KKSP</b> <br>
 						Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat 17520<br>
 						Telp: (021) 89115030<br>
 						<td class="text-right" width="20%">
