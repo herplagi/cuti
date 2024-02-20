@@ -72,7 +72,7 @@
 										<div class="form-group">
 											<input type="submit" class="btn btn-success btn-block" name="login" value="Masuk">
 										</div>
-										<br><center><p>Repost by <a href='' title='KP UNAND' target='_blank'>KP UNAND GENK!</a></p></center>
+										<br><center><p>Repost by <a href='https://saweria.co/pinokiowo' title='KP UNAND' target='_blank'>KP UNAND GENK!</a></p></center>
 										
 									</form>
 								</div>
