@@ -32,7 +32,7 @@
 									<thead>
 										<tr>
 											<th width="1%">No</th>
-											<th width="10%">NPP</th>
+											<th width="10%">NIP</th>
 											<th width="10%">Nama</th>
 											<th width="5%">Telepon</th>
 											<th width="10%">Divisi</th>

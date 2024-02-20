@@ -19,7 +19,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Sistem Ina - <?php echo $pagedesc ?></title>
+	<title>Sistem Informasi Absen KKSP - <?php echo $pagedesc ?></title>
 
 	<link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
 
