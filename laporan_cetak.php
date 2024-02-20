@@ -1,18 +1,18 @@
 <?php
-	include("sess_check.php");
+include("sess_check.php");
 
-	include("dist/function/format_tanggal.php");
-	include("dist/function/format_rupiah.php");
-	$mulai 	 = $_GET['awal'];
-	$selesai = $_GET['akhir'];
-	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
+include("dist/function/format_tanggal.php");
+include("dist/function/format_rupiah.php");
+$mulai = $_GET['awal'];
+$selesai = $_GET['akhir'];
+$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
 			AND cuti.tgl_pengajuan BETWEEN '$mulai' AND '$selesai'
 			ORDER BY cuti.tgl_pengajuan DESC";
-	$query = mysqli_query($conn,$sql);
-	// deskripsi halaman
-	$pagedesc = "Laporan Data Cuti - Periode " . IndonesiaTgl($mulai) ." - ". IndonesiaTgl($selesai);
-	$pagetitle = str_replace(" ", "_", $pagedesc)
-?>
+$query = mysqli_query($conn, $sql);
+// deskripsi halaman
+$pagedesc = "Laporan Data Cuti - Periode " . IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai);
+$pagetitle = str_replace(" ", "_", $pagedesc)
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +24,7 @@
 
 	<title><?php echo $pagetitle ?></title>
 
-	<link href="libs/images/isk-logo.jpg" rel="icon" type="images/x-icon">
+	<link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
 
 
 	<!-- Bootstrap Core CSS -->
@@ -55,10 +55,10 @@
 				<tbody>
 					<tr>
 						<td class="text-left" width="20%">
-							<img src="libs/images/isk-logo.jpg" alt="logo-dkm" width="70" />
+							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>PT. ISK INDONESIA</b> <br>
+						<b>KKSP</b> <br>
 						Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat 17520<br>
 						Telp: (021) 89115030<br>
 						<td class="text-right" width="20%">
@@ -74,7 +74,7 @@
 	<section id="body-of-report">
 		<div class="container-fluid">
 			<h4 class="text-center">LAPORAN DATA CUTI</h4>
-			<h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) ." - ". IndonesiaTgl($selesai) ?></h5>
+			<h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?></h5>
 			<br />
 			<table class="table table-bordered table-keuangan">
 				<thead>
@@ -90,19 +90,19 @@
 				</thead>
 				<tbody>
 					<?php
-						$i=1;
-						while($data = mysqli_fetch_array($query)) {
-							echo '<tr>';
-							echo '<td class="text-center">'. $i .'</td>';
-							echo '<td>'. $data['no_cuti'] .'</td>';
-							echo '<td>'. $data['nama_emp'] .'</td>';
-							echo '<td class="text-center text-nowrap">'. format_tanggal($data['tgl_pengajuan']) .'</td>';
-							echo '<td class="text-center text-nowrap">'. format_tanggal($data['tgl_awal']) .'</td>';
-							echo '<td class="text-center text-nowrap">'. format_tanggal($data['tgl_akhir']) .'</td>';
-							echo '<td>'. $data['stt_cuti'] .'</td>';
-							echo '</tr>';
-							$i++;
-						}
+					$i = 1;
+					while ($data = mysqli_fetch_array($query)) {
+						echo '<tr>';
+						echo '<td class="text-center">' . $i . '</td>';
+						echo '<td>' . $data['no_cuti'] . '</td>';
+						echo '<td>' . $data['nama_emp'] . '</td>';
+						echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
+						echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
+						echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
+						echo '<td>' . $data['stt_cuti'] . '</td>';
+						echo '</tr>';
+						$i++;
+					}
 					?>
 				</tbody>
 			</table>

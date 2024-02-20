@@ -1,17 +1,17 @@
 <?php
-	include("sess_check.php");
+include("sess_check.php");
 
-	include("dist/function/format_tanggal.php");
-	include("dist/function/format_rupiah.php");
-	$no 	 = $_GET['no'];
-	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
+include("dist/function/format_tanggal.php");
+include("dist/function/format_rupiah.php");
+$no = $_GET['no'];
+$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
 			AND cuti.no_cuti ='$no'";
-	$query = mysqli_query($conn,$sql);
-	$result = mysqli_fetch_array($query);
-	// deskripsi halaman
-	$pagedesc = "Cetak Form Cuti";
-	$pagetitle = str_replace(" ", "_", $pagedesc)
-?>
+$query = mysqli_query($conn, $sql);
+$result = mysqli_fetch_array($query);
+// deskripsi halaman
+$pagedesc = "Cetak Form Cuti";
+$pagetitle = str_replace(" ", "_", $pagedesc)
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,7 +23,7 @@
 
 	<title><?php echo $pagetitle ?></title>
 
-	<link href="libs/images/isk-logo.jpg" rel="icon" type="images/x-icon">
+	<link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
 
 	<!-- Bootstrap Core CSS -->
 	<link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -80,7 +80,7 @@
 				<tbody>
 					<tr>
 						<td width="30%">No. Cuti</td>
-						<td><?php echo $result['no_cuti'];?></td>
+						<td><?php echo $result['no_cuti']; ?></td>
 					</tr>
 					<tr>
 						<td>NPP</td>
@@ -92,39 +92,39 @@
 					</tr>
 					<tr>
 						<td>Telepon</td>
-						<td><?php echo $result['telp_emp'];?></td>
+						<td><?php echo $result['telp_emp']; ?></td>
 					</tr>
 					<tr>
 						<td>Divisi</td>
-						<td><?php echo $result['divisi'];?></td>
+						<td><?php echo $result['divisi']; ?></td>
 					</tr>
 					<tr>
 						<td>Jabatan</td>
-						<td><?php echo $result['jabatan'];?></td>
+						<td><?php echo $result['jabatan']; ?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Pengajuan</td>
-						<td><?php echo IndonesiaTgl($result['tgl_pengajuan']);?></td>
+						<td><?php echo IndonesiaTgl($result['tgl_pengajuan']); ?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Mulai</td>
-						<td><?php echo IndonesiaTgl($result['tgl_awal']);?></td>
+						<td><?php echo IndonesiaTgl($result['tgl_awal']); ?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Akhir</td>
-						<td><?php echo IndonesiaTgl($result['tgl_akhir']);?></td>
+						<td><?php echo IndonesiaTgl($result['tgl_akhir']); ?></td>
 					</tr>
 					<tr>
 						<td>Durasi</td>
-						<td><?php echo $result['durasi'];?> Hari</td>
+						<td><?php echo $result['durasi']; ?> Hari</td>
 					</tr>
 					<tr>
 						<td>Keterangan</td>
-						<td><?php echo $result['keterangan'];?></td>
+						<td><?php echo $result['keterangan']; ?></td>
 					</tr>
 					<tr>
 						<td>Status</td>
-						<td><?php echo $result['stt_cuti'];?></td>
+						<td><?php echo $result['stt_cuti']; ?></td>
 					</tr>
 				</tbody>
 				</h3>
