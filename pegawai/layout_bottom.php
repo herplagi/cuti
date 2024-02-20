@@ -3,7 +3,7 @@
 	<!-- footer-bottom -->
 	<div class="navbar navbar-inverse navbar-fixed-bottom footer-bottom">
 		<div class="container text-center">
-			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>PT. ISK Indonesia | Repost by <a href='https://stokcoding.com/' title='StokCoding.com' target='_blank'>StokCoding.com</a>
+			<p class="text-center" style="color: #D1C4E9; margin: 0 0 5px; padding: 0"><small>KKSP || <a href='https://saweria.co/pinokiowo' title='KKSP' target='_blank'>KKSP</a>
 			</p>
 		</div>
 	</div><!-- /.footer-bottom -->
