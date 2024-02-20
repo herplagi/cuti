@@ -56,7 +56,7 @@
 							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>PT. ISK INDONESIA</b> <br>
+						<b>KKSP</b> <br>
 						Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat 17520<br>
 						Telp: (021) 89115030<br>
 						<td class="text-right" width="20%">
