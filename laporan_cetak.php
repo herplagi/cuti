@@ -12,7 +12,6 @@ $query = mysqli_query($conn, $sql);
 // deskripsi halaman
 $pagedesc = "Laporan Data Cuti - Periode " . IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai);
 $pagetitle = str_replace(" ", "_", $pagedesc)
-	
 	?>
 <!DOCTYPE html>
 <html lang="en">
@@ -63,8 +62,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 						</td>
 						<td class="text-center" width="60%">
 							<b>KKSP</b> <br>
-							Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat
-							17520<br>
+							Komplek PT. Semen Padang, Jl Raya Indarung, Kec. Lubuk Kilangan, Kota Padang, Sumatera Barat 25237 <br>
 							Telp: (0751)-777987 <br>
 						<td class="text-right" width="20%">
 							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" height="70" />
