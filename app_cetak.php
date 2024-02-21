@@ -60,7 +60,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 						Komplek PT. Semen Padang, Jl Raya Indarung, Kec. Lubuk Kilangan, Kota Padang, Sumatera Barat 25237 <br>
 						(0751)-777987<br>
 						<td class="text-right" width="20%">
-							<img src="libs/images/isk.jpg" alt="logo-dkm" width="130" height="70"/>
+							<img src="libs/images/KKSP.png" alt="logo-dkm" height="70"/>
 						</td>
 					</tr>
 				</tbody>	
