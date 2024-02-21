@@ -1,12 +1,12 @@
 <?php
-	include("sess_check.php");
-	
-	// deskripsi halaman
-	$pagedesc = "Buat Pengajuan";
-	$menuparent = "cuti";
-	include("layout_top.php");
-	$now = date('Y-m-d');
-	$npp = $sess_pegawaiid;
+include("sess_check.php");
+
+// deskripsi halaman
+$pagedesc = "Buat Pengajuan";
+$menuparent = "cuti";
+include("layout_top.php");
+$now = date('Y-m-d');
+$npp = $sess_pegawaiid;
 ?>
 <script type="text/javascript">
 function valid()
@@ -27,12 +27,12 @@ function valid()
 <!-- top of file -->
 		<!-- Page Content -->
 		<div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Pengajuan Cuti</h1>
-                    </div><!-- /.col-lg-12 -->
-                </div><!-- /.row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">Pengajuan Cuti</h1>
+					</div><!-- /.col-lg-12 -->
+				</div><!-- /.row -->
 
 				<div class="row">
 					<div class="col-lg-12"><?php include("layout_alert.php"); ?></div>
@@ -48,8 +48,8 @@ function valid()
 										<label class="control-label col-sm-3">Mulai Cuti</label>
 										<div class="col-sm-4">
 											<input type="date" name="mulai" class="form-control" required>
-											<input type="hidden" name="now" class="form-control" value="<?php echo $now;?>" required>
-											<input type="hidden" name="npp" class="form-control" value="<?php echo $npp;?>" required>
+											<input type="hidden" name="now" class="form-control" value="<?php echo $now; ?>" required>
+											<input type="hidden" name="npp" class="form-control" value="<?php echo $npp; ?>" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -65,35 +65,36 @@ function valid()
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">Leader</label>
-										<div class="col-sm-4">
-											<select name="leader" id="leader" class="form-control" required>
-											<option value="" selected>======== Pilih Leader ========</option>
-												<?php
-													$mySql = "SELECT * FROM employee WHERE hak_akses='Leader' AND active='Aktif' ORDER BY nama_emp";
-													$myQry = mysqli_query($conn, $mySql);
-													$dataLeader = $result['npp'];
-													while ($leaderData = mysqli_fetch_array($myQry)) {
-														if ($leaderData['npp']== $dataLeader) {
-														$cek = " selected";
-														} else { $cek=""; }
-														echo "<option value='$leaderData[npp]' $cek>".$leaderData[nama_emp]."</option>";
-													}
-												?>
-											</select>
-										</div>
-									</div>
-								</div>
-								<div class="panel-footer">
-									<button type="submit" name="simpan" class="btn btn-success">Simpan</button>
-								</div>
+		<label class="control-label col-sm-3">Leader</label>
+		<div class="col-sm-4">
+			<select name="leader" id="leader" class="form-control" required>
+				<option value="" selected>======== Pilih ========</option>
+				<?php
+				$mySql = "SELECT * FROM employee WHERE hak_akses='Leader' AND active='Aktif' ORDER BY nama_emp";
+				$myQry = mysqli_query($conn, $mySql);
+				$dataLeader = $result['npp'];
+				while ($leaderData = mysqli_fetch_array($myQry)) {
+					if ($leaderData['npp'] == $dataLeader) {
+						$cek = " selected";
+					} else {
+						$cek = "";
+					}
+					echo "<option value='$leaderData[npp]' $cek>" . $leaderData['nama_emp'] . "</option>";
+				}
+				?>
+			</select>
+		</div>
+	</div>
+	<div class="panel-footer">
+		<button type="submit" name="simpan" class="btn btn-success">Simpan</button>
+	</div>
 							</div><!-- /.panel -->
 						</form>
 					</div><!-- /.col-lg-12 -->
 				</div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div><!-- /#page-wrapper -->
+			</div><!-- /.container-fluid -->
+		</div><!-- /#page-wrapper -->
 <!-- bottom of file -->
 <?php
-	include("layout_bottom.php");
+include("layout_bottom.php");
 ?>
