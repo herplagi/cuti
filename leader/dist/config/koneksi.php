@@ -4,7 +4,7 @@
   $dbhost = "localhost";
   $dbuser = "root";
   $dbpass = "";
-  $dbname = "db_cuti";
+  $dbname = "cuti";
 
   $conn = mysqli_connect($dbhost, $dbuser, $dbpass, $dbname) or die("Tidak dapat terhubung ke database: ".mysqli_error());
 ?>
