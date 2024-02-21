@@ -103,7 +103,7 @@ $res = mysqli_fetch_array($ress_g);
 				<div class="sidebar-nav navbar-collapse">
 					<ul class="nav" id="side-menu">
 						<li class="sidebar-search">
-							<h4>Sistem Informasi Pengajuan Cuti Online <br> <b>PT. ISK Indonesia</b></h4>
+							<h4>Sistem Informasi Pengajuan Cuti Online <br> <b>KKSP</b></h4>
 							<h5 class="text-muted"><i class="fa fa-calendar fa-fw"></i>&nbsp;<?php echo $hari_ini . ", " . $tanggal . " " . $bulan_ini . " " . $tahun ?></h5>
 						</li>
 						<?php
