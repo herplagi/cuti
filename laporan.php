@@ -91,15 +91,7 @@
 							</div>
 							</div>
 			<!-- Large modal -->
-			<div class="modal fade bs-example-modal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
-				<div class="modal-dialog modal-lg">
-					<div class="modal-content">
-						<div class="modal-body">
-							<p>One fine body…</p>
-						</div>
-					</div>
-				</div>
-			</div>    
+   
 						</div><!-- /.panel -->
 					</div><!-- /.col-lg-12 -->
 				</div><!-- /.row -->

@@ -39,7 +39,7 @@ if(isset($_POST['login'])) {
 				$aks = "Leader";
 				$sql = "SELECT * FROM employee WHERE hak_akses='".$aks."' AND npp='". $username ."' AND password='". $password ."'";
 				$ress = mysqli_query($conn, $sql);
-				$rows = mysqli_num_rows($ress);
+				$rows = mysqli_num_rows($ress);	
 				$dataku = mysqli_fetch_array($ress);
 				// mendaftarkan session jika username di temukan
 				if($rows == 1) {

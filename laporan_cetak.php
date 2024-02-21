@@ -60,9 +60,9 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 						<td class="text-center" width="60%">
 						<b>KKSP</b> <br>
 						Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat 17520<br>
-						Telp: (021) 89115030<br>
+						Telp: (0751)-777987	<br>
 						<td class="text-right" width="20%">
-							<img src="libs/images/KKSP.png" alt="logo-dkm" width="130" height="70"/>
+							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" height="70"/>
 						</td>
 					</tr>
 				</tbody>
