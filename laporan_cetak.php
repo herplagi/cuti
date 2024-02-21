@@ -12,9 +12,11 @@ $query = mysqli_query($conn, $sql);
 // deskripsi halaman
 $pagedesc = "Laporan Data Cuti - Periode " . IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai);
 $pagetitle = str_replace(" ", "_", $pagedesc)
+	
 	?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,7 +24,9 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 	<meta name="description" content="">
 	<meta name="author" content="universitas pamulang">
 
-	<title><?php echo $pagetitle ?></title>
+	<title>
+		<?php echo $pagetitle ?>
+	</title>
 
 	<link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
 
@@ -36,7 +40,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 
 	<!-- Custom Fonts -->
 	<link href="libs/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-	
+
 	<!-- jQuery -->
 	<script src="libs/jquery/dist/jquery.min.js"></script>
 
@@ -58,11 +62,12 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>KKSP</b> <br>
-						Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat 17520<br>
-						Telp: (0751)-777987	<br>
+							<b>KKSP</b> <br>
+							Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat
+							17520<br>
+							Telp: (0751)-777987 <br>
 						<td class="text-right" width="20%">
-							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" height="70"/>
+							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" height="70" />
 						</td>
 					</tr>
 				</tbody>
@@ -74,18 +79,20 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 	<section id="body-of-report">
 		<div class="container-fluid">
 			<h4 class="text-center">LAPORAN DATA CUTI</h4>
-			<h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?></h5>
+			<h5 class="text-center">Periode
+				<?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?>
+			</h5>
 			<br />
 			<table class="table table-bordered table-keuangan">
 				<thead>
 					<tr>
 						<th width="1%">No</th>
-						<th width="10%">No Cuti</th>
+						<th width="10%">NIP</th>
 						<th width="10%">Nama Pemohon</th>
 						<th width="5%">Tgl Pengajuan</th>
 						<th width="5%">Tgl Awal</th>
 						<th width="5%">Tgl Akhir</th>
-						<th width="5%">Status</th>
+						<th width="5%">Keterangan</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -94,12 +101,12 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 					while ($data = mysqli_fetch_array($query)) {
 						echo '<tr>';
 						echo '<td class="text-center">' . $i . '</td>';
-						echo '<td>' . $data['no_cuti'] . '</td>';
+						echo '<td>' . $data['npp'] . '</td>';
 						echo '<td>' . $data['nama_emp'] . '</td>';
 						echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
 						echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
 						echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
-						echo '<td>' . $data['stt_cuti'] . '</td>';
+						echo '<td>' . $data['keterangan'] . '</td>';
 						echo '</tr>';
 						$i++;
 					}
@@ -111,7 +118,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 	</section>
 
 	<script type="text/javascript">
-		$(document).ready(function() {
+		$(document).ready(function () {
 			window.print();
 		});
 	</script>
@@ -122,4 +129,5 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 	<script src="libs/jTerbilang/jTerbilang.js"></script>
 
 </body>
+
 </html>

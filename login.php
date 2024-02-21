@@ -61,15 +61,6 @@
 											<input type="password" class="form-control" name="password" placeholder="Password" required>
 										</div>
 										<div class="form-group">
-											<select class="form-control" name="akses" required>
-											<option value="">======= Login Sebagai =======</option>
-											<option value="Admin">Administrator/HRD</option>
-											<option value="Mng">Manager</option>
-											<option value="Pgw">Pegawai</option>
-											<option value="Spv">Supervisor</option>
-											</select>
-										</div>
-										<div class="form-group">
 											<input type="submit" class="btn btn-success btn-block" name="login" value="Masuk">
 										</div>
 										<br><center><p>Repost by <a href='https://saweria.co/pinokiowo' title='KP UNAND' target='_blank'>KP UNAND GENK!</a></p></center>

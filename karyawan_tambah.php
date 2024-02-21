@@ -109,7 +109,7 @@
 									<div class="form-group">
 										<label class="control-label col-sm-3">Foto</label>
 										<div class="col-sm-3">
-											<input type="file" name="foto" class="form-control" accept="image/*" required>
+											<input type="file" name="foto" class="form-control" accept="image/*">
 										</div>
 									</div>
 								</div>
