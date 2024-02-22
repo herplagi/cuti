@@ -85,12 +85,12 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 				<thead>
 					<tr>
 						<th width="1%">No</th>
-						<th width="10%">NIP</th>
+						<th width="5%">NIP</th>
 						<th width="10%">Nama Pemohon</th>
 						<th width="5%">Tgl Pengajuan</th>
 						<th width="5%">Tgl Awal</th>
 						<th width="5%">Tgl Akhir</th>
-						<th width="5%">Keterangan</th>
+						<th width="10%">Keterangan</th>
 					</tr>
 				</thead>
 				<tbody>

@@ -67,7 +67,7 @@ $npp = $sess_pegawaiid;
 		<label class="control-label col-sm-3">Leader</label>
 		<div class="col-sm-4">
 			<select name="leader" id="leader" class="form-control" required>
-				<option value="" selected>======== Pilih ========</option>
+				<option value="" disabled selected>======== Pilih ========</option>
 				<?php
 				$mySql = "SELECT * FROM employee WHERE hak_akses='Leader' AND active='Aktif' ORDER BY nama_emp";
 				$myQry = mysqli_query($conn, $mySql);

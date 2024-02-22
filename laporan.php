@@ -38,6 +38,27 @@ include("dist/function/format_tanggal.php");
 										placeholder="To Date(dd/mm/yyyy)" required>
 								</div>
 								<div class="col-sm-4">
+									<label>Unit</label><br>
+									<select name="unit" id="unit" style="width: 200px; height: 33.5px; border-color:#b7b9bd; border-radius: 5px;">
+										<option value="" disabled selected>Pilih Unit...</option>
+										<option value="">Umum & Legal</option>
+										<option value="">Akuntansi</option>
+										<option value="">Keuangan</option>
+										<option value="">SDM</option>
+										<option value="">Simpan Pinjam</option>
+										<option value="">Pembelian</option>
+										<option value="">Toko</option>
+										<option value="">Administrasi Toko</option>
+										<option value="">Semen Curah</option>
+										<option value="">Transportasi & Distribusi</option>
+										<option value="">Gudang Semen Curah</option>
+										<option value="">Perdu</option>
+										<option value="">Gudang Perdu</option>
+										<option value="">Kontraktor</option>
+										<option value="">SPI</option>
+									</select>
+								</div>
+								<div class="col-sm-4">
 									<label>&nbsp;</label><br />
 									<input type="submit" name="submit" value="Lihat Laporan" class="btn btn-primary">
 								</div>
@@ -55,50 +76,50 @@ include("dist/function/format_tanggal.php");
 					$query = mysqli_query($conn, $sql);
 					?>
 
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="panel panel-default">
-								<div class="panel-body">
-									<table class="table table-striped table-bordered table-hover" id="tabel-data">
-										<thead>
-											<tr>
-												<th width="1%">No</th>
-												<th width="10%">NIP</th>
-												<th width="10%">Nama Karyawan</th>
-												<th width="5%">Tgl Pengajuan</th>
-												<th width="5%">Tgl Awal</th>
-												<th width="5%">Tgl Akhir</th>
-												<th width="5%">Keterangan</th>
-											</tr>
-										</thead>
-										<tbody>
-											<?php
-											$i = 1;
-											while ($data = mysqli_fetch_array($query)) {
-												echo '<tr>';
-												echo '<td class="text-center">' . $i . '</td>';
-												echo '<td>' . $data['npp'] . '</td>';
-												echo '<td>' . $data['nama_emp'] . '</td>';
-												echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
-												echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
-												echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
-												echo '<td>' . $data['keterangan'] . '</td>';
-												echo '</tr>';
-												$i++;
-											}
-											?>
-										</tbody>
-									</table>
-									<div class="form-group">
-										<a href="laporan_cetak.php?awal=<?php echo $mulai; ?>&akhir=<?php echo $selesai; ?>"
-											target="_blank" class="btn btn-warning">Cetak</a>
-									</div>
-								</div>
-								<!-- Large modal -->
+																																																			<div class="row">
+																																																				<div class="col-lg-12">
+																																																					<div class="panel panel-default">
+																																																						<div class="panel-body">
+																																																							<table class="table table-striped table-bordered table-hover" id="tabel-data">
+																																																								<thead>
+																																																									<tr>
+																																																										<th width="1%">No</th>
+																																																										<th width="5%">NIP</th>
+																																																										<th width="10%">Nama Karyawan</th>
+																																																										<th width="5%">Tgl Pengajuan</th>
+																																																										<th width="5%">Tgl Awal</th>
+																																																										<th width="5%">Tgl Akhir</th>
+																																																										<th width="10%">Keterangan</th>
+																																																									</tr>
+																																																								</thead>
+																																																								<tbody>
+																																																									<?php
+																																																									$i = 1;
+																																																									while ($data = mysqli_fetch_array($query)) {
+																																																										echo '<tr>';
+																																																										echo '<td class="text-center">' . $i . '</td>';
+																																																										echo '<td>' . $data['npp'] . '</td>';
+																																																										echo '<td>' . $data['nama_emp'] . '</td>';
+																																																										echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
+																																																										echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
+																																																										echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
+																																																										echo '<td>' . $data['keterangan'] . '</td>';
+																																																										echo '</tr>';
+																																																										$i++;
+																																																									}
+																																																									?>
+																																																								</tbody>
+																																																							</table>
+																																																							<div class="form-group">
+																																																								<a href="laporan_cetak.php?awal=<?php echo $mulai; ?>&akhir=<?php echo $selesai; ?>"
+																																																									target="_blank" class="btn btn-warning">Cetak</a>
+																																																							</div>
+																																																						</div>
+																																																						<!-- Large modal -->
 
-							</div><!-- /.panel -->
-						</div><!-- /.col-lg-12 -->
-					</div><!-- /.row -->
+																																																					</div><!-- /.panel -->
+																																																				</div><!-- /.col-lg-12 -->
+																																																			</div><!-- /.row -->
 				<?php } ?>
 			</div><!-- /.container-fluid -->
 		</div><!-- /#page-wrapper -->
