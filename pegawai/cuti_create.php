@@ -69,7 +69,7 @@ $nip = $sess_pegawaiid;
 			<select name="kep_unit" id="kep_unit" class="form-control" required>
 				<option value="" selected>======== Pilih ========</option>
 				<?php
-				$mySql = "SELECT * FROM employee WHERE hak_akses='kep_unit' AND active='Aktif' ORDER BY nama_emp";
+				$mySql = "SELECT * FROM employee WHERE hak_akses='Kepala Unit' AND active='Aktif' ORDER BY nama_emp";
 				$myQry = mysqli_query($conn, $mySql);
 				$dataLeader = $result['nip'];
 				while ($leaderData = mysqli_fetch_array($myQry)) {
