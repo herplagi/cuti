@@ -1,10 +1,10 @@
 <?php
-	include("sess_check.php");
-	
-	// deskripsi halaman
-	$pagedesc = "Data Karyawan";
-	$menuparent = "master";
-	include("layout_top.php");
+include("sess_check.php");
+
+// deskripsi halaman
+$pagedesc = "Data Karyawan";
+$menuparent = "master";
+include("layout_top.php");
 ?>
 <script type="text/javascript">
 	function checknipAvailability() {
@@ -24,12 +24,12 @@
 <!-- top of file -->
 		<!-- Page Content -->
 		<div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h1 class="page-header">Data Karyawan</h1>
-                    </div><!-- /.col-lg-12 -->
-                </div><!-- /.row -->
+			<div class="container-fluid">
+				<div class="row">
+					<div class="col-lg-12">
+						<h1 class="page-header">Data Karyawan</h1>
+					</div><!-- /.col-lg-12 -->
+				</div><!-- /.row -->
 
 				<div class="row">
 					<div class="col-lg-12"><?php include("layout_alert.php"); ?></div>
@@ -73,7 +73,24 @@
 									<div class="form-group">
 										<label class="control-label col-sm-3">Unit Kerja</label>
 										<div class="col-sm-4">
-											<input type="text" name="unit kerja" class="form-control" placeholder="Unit Kerja" required>
+										<select name="unit_kerja" id="unit_kerja" style="width: 200px; height: 33.5px; border-color:#b7b9bd; border-radius: 5px;" required>
+										<option value="" disabled selected>Pilih Unit...</option>
+										<option value="Umum">Umum & Legal</option>
+										<option value="Akuntansi">Akuntansi</option>
+										<option value="Keuangan">Keuangan</option>
+										<option value="SDM">SDM</option>
+										<option value="Simpan Pinjam">Simpan Pinjam</option>
+										<option value="Pembelian">Pembelian</option>
+										<option value="Toko">Toko</option>
+										<option value="Administrasi Toko">Administrasi Toko</option>
+										<option value="Semen Curah">Semen Curah</option>
+										<option value="Transportasi & Distribusi">Transportasi & Distribusi</option>
+										<option value="Gudang Semen Curah">Gudang Semen Curah</option>
+										<option value="Perdu">Perdu</option>
+										<option value="Gudang Perdu">Gudang Perdu</option>
+										<option value="Kontraktor">Kontraktor</option>
+										<option value="SPI">SPI</option>
+									</select>
 										</div>
 									</div>
 									<div class="form-group">
@@ -120,9 +137,9 @@
 						</form>
 					</div><!-- /.col-lg-12 -->
 				</div><!-- /.row -->
-            </div><!-- /.container-fluid -->
-        </div><!-- /#page-wrapper -->
+			</div><!-- /.container-fluid -->
+		</div><!-- /#page-wrapper -->
 <!-- bottom of file -->
 <?php
-	include("layout_bottom.php");
+include("layout_bottom.php");
 ?>
