@@ -102,7 +102,7 @@ $(document).ready(function() {
 										<div class="col-sm-4">
 											<select name="sen_manager" id="sen_manager" class="form-control" disabled>
 												<?php
-													$sql_don = "SELECT * FROM employee WHERE hak_akses='Supervisor' AND active='Aktif' ORDER BY nama_emp ASC";
+													$sql_don = "SELECT * FROM employee WHERE hak_akses='Senior Manager' AND active='Aktif' ORDER BY nama_emp ASC";
 													$ress_don = mysqli_query($conn, $sql_don);
 													while($li = mysqli_fetch_array($ress_don)) {
 														echo '<option value="'. $li['nip'] .'">'. $li['nama_emp'].'</option>';

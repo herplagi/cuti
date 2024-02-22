@@ -70,7 +70,7 @@ function valid()
 											<select name="spv" id="spv" class="form-control" required>
 											<option value="" disabled selected>======== Pilih Senior Manager ========</option>
 												<?php
-												$mySql = "SELECT * FROM employee WHERE hak_akses='Supervisor' AND active='Aktif' ORDER BY nama_emp";
+												$mySql = "SELECT * FROM employee WHERE hak_akses='Senior Manager' AND active='Aktif' ORDER BY nama_emp";
 												$myQry = mysqli_query($conn, $mySql);
 												$dataLeader = $result['nip'];
 												while ($leaderData = mysqli_fetch_array($myQry)) {
