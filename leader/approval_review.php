@@ -98,7 +98,7 @@ $(document).ready(function() {
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">Supervisor</label>
+										<label class="control-label col-sm-3">Senior Manager</label>
 										<div class="col-sm-4">
 											<select name="sen_manager" id="sen_manager" class="form-control" disabled>
 												<?php

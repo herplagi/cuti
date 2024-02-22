@@ -29,7 +29,7 @@ else {
 <div><br/>
 <table width="100%">
 	<tr>
-		<td width="20%"><b>nip</b></td>
+		<td width="20%"><b>NIP</b></td>
 		<td width="2%"><b>:</b></td>
 		<td width="78%"><?php echo $result['nip'];?></td>
 	</tr>
@@ -61,7 +61,7 @@ else {
 		<td colspan="3">&nbsp;</td>
 	</tr>
 	<tr>
-		<td width="20%"><b>unit_kerja</b></td>
+		<td width="20%"><b>Unit</b></td>
 		<td width="2%"><b>:</b></td>
 		<td width="78%"><?php echo $result['unit_kerja'];?></td>
 	</tr>
