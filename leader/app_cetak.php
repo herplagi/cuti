@@ -4,7 +4,7 @@
 	include("dist/function/format_tanggal.php");
 	include("dist/function/format_rupiah.php");
 	$no 	 = $_GET['no'];
-	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
+	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip
 			AND cuti.no_cuti ='$no'";
 	$query = mysqli_query($conn,$sql);
 	$result = mysqli_fetch_array($query);
@@ -83,8 +83,8 @@
 						<td><?php echo $result['no_cuti'];?></td>
 					</tr>
 					<tr>
-						<td>NPP</td>
-						<td><?php echo $result['npp'] ?></td>
+						<td>nip</td>
+						<td><?php echo $result['nip'] ?></td>
 					</tr>
 					<tr>
 						<td>Pemohon</td>
@@ -95,8 +95,8 @@
 						<td><?php echo $result['telp_emp'];?></td>
 					</tr>
 					<tr>
-						<td>Divisi</td>
-						<td><?php echo $result['divisi'];?></td>
+						<td>Unit Kerja</td>
+						<td><?php echo $result['unit_kerja'];?></td>
 					</tr>
 					<tr>
 						<td>Jabatan</td>

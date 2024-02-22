@@ -50,7 +50,7 @@ include("dist/function/format_tanggal.php");
 					$no = 0;
 					$mulai = $_GET['awal'];
 					$selesai = $_GET['akhir'];
-					$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp 
+					$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip 
 										AND cuti.tgl_pengajuan BETWEEN '$mulai' AND '$selesai' ORDER BY cuti.tgl_pengajuan DESC";
 					$query = mysqli_query($conn, $sql);
 					?>
@@ -77,7 +77,7 @@ include("dist/function/format_tanggal.php");
 											while ($data = mysqli_fetch_array($query)) {
 												echo '<tr>';
 												echo '<td class="text-center">' . $i . '</td>';
-												echo '<td>' . $data['npp'] . '</td>';
+												echo '<td>' . $data['nip'] . '</td>';
 												echo '<td>' . $data['nama_emp'] . '</td>';
 												echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
 												echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';

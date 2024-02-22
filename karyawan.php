@@ -37,7 +37,7 @@ include("dist/function/format_rupiah.php");
 									<th width="10%">NIP</th>
 									<th width="10%">Nama</th>
 									<th width="5%">Telepon</th>
-									<th width="10%">Divisi</th>
+									<th width="10%">Unit Kerja</th>
 									<th width="10%">Akses</th>
 									<th width="10%">Opsi</th>
 								</tr>
@@ -50,15 +50,15 @@ include("dist/function/format_rupiah.php");
 								while ($data = mysqli_fetch_array($ress)) {
 									echo '<tr>';
 									echo '<td class="text-center">' . $i . '</td>';
-									echo '<td class="text-center">' . $data['npp'] . '</td>';
+									echo '<td class="text-center">' . $data['nip'] . '</td>';
 									echo '<td class="text-center">' . $data['nama_emp'] . '</td>';
 									echo '<td class="text-center">' . $data['telp_emp'] . '</td>';
-									echo '<td class="text-center">' . $data['divisi'] . '</td>';
+									echo '<td class="text-center">' . $data['unit_kerja'] . '</td>';
 									echo '<td class="text-center">' . $data['hak_akses'] . '</td>';
 									echo '<td class="text-center">
-													  <a href="#myModal" data-toggle="modal" data-load-code="' . $data['npp'] . '" data-remote-target="#myModal .modal-body" class="btn btn-primary btn-xs">Detail</a>
-													  <a href="karyawan_edit.php?npp=' . $data['npp'] . '" class="btn btn-warning btn-xs">Edit</a>'; ?>
-									<a href="karyawan_hapus.php?npp=<?php echo $data['npp']; ?>"
+													  <a href="#myModal" data-toggle="modal" data-load-code="' . $data['nip'] . '" data-remote-target="#myModal .modal-body" class="btn btn-primary btn-xs">Detail</a>
+													  <a href="karyawan_edit.php?nip=' . $data['nip'] . '" class="btn btn-warning btn-xs">Edit</a>'; ?>
+									<a href="karyawan_hapus.php?nip=<?php echo $data['nip']; ?>"
 										onclick="return confirm('Apakah anda yakin akan menghapus <?php echo $data['nama_emp']; ?>?');"
 										class="btn btn-danger btn-xs">Hapus</a></td>
 									<?php

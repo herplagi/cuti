@@ -6,7 +6,7 @@
 	$menuparent = "approval";
 	include("layout_top.php");
 	$now = date('Y-m-d');
-	$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp AND cuti.no_cuti='$_GET[no]'";
+	$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND cuti.no_cuti='$_GET[no]'";
 	$Qry = mysqli_query($conn, $Sql);
 	$data = mysqli_fetch_array($Qry);
 

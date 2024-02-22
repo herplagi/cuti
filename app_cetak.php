@@ -4,7 +4,7 @@ include("sess_check.php");
 include("dist/function/format_tanggal.php");
 include("dist/function/format_rupiah.php");
 $no = $_GET['no'];
-$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp
+$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip
 			AND cuti.no_cuti ='$no'";
 $query = mysqli_query($conn, $sql);
 $result = mysqli_fetch_array($query);
@@ -84,7 +84,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 					</tr>
 					<tr>
 						<td>NIP</td>
-						<td><?php echo $result['npp'] ?></td>
+						<td><?php echo $result['nip'] ?></td>
 					</tr>
 					<tr>
 						<td>Pemohon</td>
@@ -95,8 +95,8 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 						<td><?php echo $result['telp_emp']; ?></td>
 					</tr>
 					<tr>
-						<td>Divisi</td>
-						<td><?php echo $result['divisi']; ?></td>
+						<td>Unit Kerja</td>
+						<td><?php echo $result['unit_kerja']; ?></td>
 					</tr>
 					<tr>
 						<td>Jabatan</td>

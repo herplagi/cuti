@@ -1,7 +1,7 @@
 <?php
 include("sess_check.php");
 
-$npp	= $_POST['npp'];
+$nip	= $_POST['nip'];
 $ajuan = date('Y-m-d');
 $mulai	= $_POST['mulai'];
 $akhir	= $_POST['akhir'];
@@ -17,7 +17,7 @@ $stt = "Menunggu Approval HRD";
 
 $id = date('dmYHis');
 
-$pgw = "SELECT * FROM employee WHERE npp='$npp'";
+$pgw = "SELECT * FROM employee WHERE nip='$nip'";
 $qpgw = mysqli_query($conn,$pgw);
 $ress = mysqli_fetch_array($qpgw);
 
@@ -30,8 +30,8 @@ if($durasi>$jml){
 			document.location = 'cuti_create.php'; 
 		</script>";	
 }else{
-	$sql 	= "INSERT INTO cuti (no_cuti, npp, tgl_pengajuan, tgl_awal, tgl_akhir, durasi, keterangan, stt_cuti) 
-				VALUES ('$id','$npp','$ajuan','$mulai','$akhir','$durasi','$ket','$stt')";
+	$sql 	= "INSERT INTO cuti (no_cuti, nip, tgl_pengajuan, tgl_awal, tgl_akhir, durasi, keterangan, stt_cuti) 
+				VALUES ('$id','$i','$ajuan','$mulai','$akhir','$durasi','$ket','$stt')";
 	$query 	= mysqli_query($conn,$sql);
 	if($query){
 		echo "<script type='text/javascript'>

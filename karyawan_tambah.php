@@ -7,11 +7,11 @@
 	include("layout_top.php");
 ?>
 <script type="text/javascript">
-	function checkNppAvailability() {
+	function checknipAvailability() {
 	$("#loaderIcon").show();
 	jQuery.ajax({
-		url: "check_nppavailability.php",
-		data:'npp='+$("#npp").val(),
+		url: "check_nipavailability.php",
+		data:'nip='+$("#nip").val(),
 		type: "POST",
 		success:function(data){
 			$("#user-availability-status").html(data);
@@ -42,9 +42,9 @@
 								<div class="panel-heading"><h3>Tambah Data</h3></div>
 								<div class="panel-body">
 									<div class="form-group">
-										<label class="control-label col-sm-3">NPP</label>
+										<label class="control-label col-sm-3">NIP</label>
 										<div class="col-sm-4">
-											<input type="text" name="npp" onBlur="checkNppAvailability()" class="form-control" placeholder="NPP" required>
+											<input type="text" name="nip" onBlur="checknipAvailability()" class="form-control" placeholder="NIP" required>
 											<span id="user-availability-status" style="font-size:12px;"></span>
 										</div>
 									</div>
@@ -71,9 +71,9 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">Divisi</label>
+										<label class="control-label col-sm-3">Unit Kerja</label>
 										<div class="col-sm-4">
-											<input type="text" name="divisi" class="form-control" placeholder="Divisi" required>
+											<input type="text" name="unit kerja" class="form-control" placeholder="Unit Kerja" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -99,10 +99,10 @@
 										<div class="col-sm-3">
 											<select name="akses" id="akses" class="form-control" required>
 												<option value="" selected>--- Pilih Hak Akses ---</option>
-												<option value="Leader">Leader</option>
-												<option value="Manager">Manager</option>
+												<option value="Kepala Unit">Kepala Unit</option>
+												<option value="General Manager">General Manager</option>
 												<option value="Pegawai">Pegawai</option>
-												<option value="Supervisor">Supervisor</option>
+												<option value="Senior Manager">Senior Manager</option>
 											</select>
 										</div>
 									</div>

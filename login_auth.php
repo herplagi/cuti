@@ -7,7 +7,7 @@ if (isset($_POST['login'])) {
         header("location: login.php?err=empty");
     } else {
         $username = $_POST['username'];
-        $password = $_POST['password'];
+        $password = $_POST['password']; 
         $username = htmlentities(trim(strip_tags($username)));
         $password = htmlentities(trim(strip_tags($password)));
 
@@ -21,25 +21,25 @@ if (isset($_POST['login'])) {
             header("location: index.php?login=success");
         } else {
             // Cek ke tabel Employee berdasarkan hak akses
-            $sql = "SELECT * FROM employee WHERE npp='$username' AND password='$password'";
+            $sql = "SELECT * FROM employee WHERE nip='$username' AND password='$password'";
             $result = mysqli_query($conn, $sql);
             $row = mysqli_fetch_array($result);
 
             if ($row) {
                 $role = strtolower($row['hak_akses']);
-                $_SESSION[$role] = strtolower($row['npp']);
+                $_SESSION[$role] = strtolower($row['nip']);
 
                 switch ($role) {
-                    case 'leader':
+                    case 'kepala unit':
                         header("location: leader/index.php?login=success");
                         break;
-                    case 'manager':
+                    case 'general manager':
                         header("location: manager/index.php?login=success");
                         break;
                     case 'pegawai':
                         header("location: pegawai/index.php?login=success");
                         break;
-                    case 'supervisor':
+                    case 'senior manager':
                         header("location: supervisor/index.php?login=success");
                         break;
                     default:

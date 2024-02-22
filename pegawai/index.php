@@ -4,19 +4,19 @@ include("sess_check.php");
 $id = $sess_pegawaiid;
 
 
-$sql_g = "SELECT * FROM employee WHERE npp='$id'";
+$sql_g = "SELECT * FROM employee WHERE nip='$id'";
 $ress_g = mysqli_query($conn, $sql_g);
 $res = mysqli_fetch_array($ress_g);
 
-$sqlb = "SELECT * FROM cuti WHERE npp='$id' AND stt_cuti!='Rejected'";
+$sqlb = "SELECT * FROM cuti WHERE nip='$id' AND stt_cuti!='Rejected'";
 $ressb = mysqli_query($conn, $sqlb);
 $b = mysqli_num_rows($ressb);
 
-$sqlc = "SELECT * FROM cuti WHERE npp='$id' AND stt_cuti='Rejected'";
+$sqlc = "SELECT * FROM cuti WHERE nip='$id' AND stt_cuti='Rejected'";
 $ressc = mysqli_query($conn, $sqlc);
 $c = mysqli_num_rows($ressc);
 
-$sqla = "SELECT * FROM cuti WHERE npp='$id' AND hrd_app=1";
+$sqla = "SELECT * FROM cuti WHERE nip='$id' AND hrd_app=1";
 $ressa = mysqli_query($conn, $sqla);
 $a = mysqli_num_rows($ressa);
 

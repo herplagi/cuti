@@ -27,7 +27,7 @@
 						<div class="panel panel-default">
 							<div class="panel-body">
 						<?php
-								$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp AND 
+								$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND 
 										cuti.hrd_app='1' ORDER BY cuti.tgl_pengajuan DESC";
 								$Qry = mysqli_query($conn, $Sql);
 								
@@ -36,7 +36,7 @@
 									<thead>
 										<tr>
 											<th width="1%">No</th>
-											<th width="10%">No Cuti</th>
+											<th width="10%">NIP</th>
 											<th width="10%">Nama Pemohon</th>
 											<th width="5%">Tgl Pengajuan</th>
 											<th width="5%">Tgl Awal</th>
@@ -50,8 +50,8 @@
 											while($data = mysqli_fetch_array($Qry)){
 												echo '<tr>';
 												echo '<td class="text-center">'. $i .'</td>';
-												echo '<td class="text-center">'. $data['no_cuti'] .'</td>';
-												echo '<td class="text-center"><a href="#myModal" data-toggle="modal" data-load-npp="'.$data['npp'].'" data-remote-target="#myModal .modal-body">'.$data['nama_emp'].'</a></td>';
+												echo '<td class="text-center">'. $data['nip'] .'</td>';
+												echo '<td class="text-center"><a href="#myModal" data-toggle="modal" data-load-nip="'.$data['nip'].'" data-remote-target="#myModal .modal-body">'.$data['nama_emp'].'</a></td>';
 												echo '<td class="text-center">'. IndonesiaTgl($data['tgl_pengajuan']) .'</td>';
 												echo '<td class="text-center">'. IndonesiaTgl($data['tgl_awal']) .'</td>';
 												echo '<td class="text-center">'. IndonesiaTgl($data['tgl_akhir']) .'</td>';
@@ -112,13 +112,13 @@
 					}
 		});		
 
-		$('[data-load-npp]').on('click',function(e) {
+		$('[data-load-nip]').on('click',function(e) {
 					e.preventDefault();
 					var $this = $(this);
-					var npp = $this.data('load-npp');
-					if(npp) {
-						$($this.data('remote-target')).load('karyawan_detail.php?code='+npp);
-						app.npp = npp;
+					var nip = $this.data('load-nip');
+					if(nip) {
+						$($this.data('remote-target')).load('karyawan_detail.php?code='+nip);
+						app.nip = nip;
 						
 					}
 		});		

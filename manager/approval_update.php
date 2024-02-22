@@ -11,8 +11,8 @@ if($aksi=="2"){
 	$stt="Rejected";
 	$sql = "UPDATE cuti SET
 			stt_cuti='". $stt ."',
-			lead_app='". $null ."',
-			spv_app='". $null ."',
+			kep_unit_app='". $null ."',
+			smg_app='". $null ."',
 			ket_reject='". $reject ."'
 			WHERE no_cuti='". $no ."'";
 		$ress = mysqli_query($conn, $sql);
@@ -23,7 +23,7 @@ if($aksi=="2"){
 	$num	=1;
 	$sql = "UPDATE cuti SET
 			stt_cuti='". $stt ."',
-			mng_app='". $num ."'
+			gmg_app='". $num ."'
 			WHERE no_cuti='". $no ."'";
 		$ress = mysqli_query($conn, $sql);
 		header("location: approval_cuti.php?act=update&msg=success");

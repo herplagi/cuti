@@ -6,7 +6,7 @@
 	$menuparent = "approval";
 	include("layout_top.php");
 	$now = date('Y-m-d');
-	$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp AND cuti.no_cuti='$_GET[no]'";
+	$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND cuti.no_cuti='$_GET[no]'";
 	$Qry = mysqli_query($conn, $Sql);
 	$data = mysqli_fetch_array($Qry);
 
@@ -15,10 +15,10 @@
 $(document).ready(function() {
     $('#aksi').change(function(){
         if($(this).val() === '2'){
-            $('#spv').attr('disabled', 'disabled');
+            $('#sen_manager').attr('disabled', 'disabled');
             $('#reject').attr('disabled', false);
         }else{
-            $('#spv').attr('disabled', false);
+            $('#sen_manager').attr('disabled', false);
             $('#reject').attr('disabled', 'disabled');
         }
     });
@@ -100,12 +100,12 @@ $(document).ready(function() {
 									<div class="form-group">
 										<label class="control-label col-sm-3">Supervisor</label>
 										<div class="col-sm-4">
-											<select name="spv" id="spv" class="form-control" disabled>
+											<select name="sen_manager" id="sen_manager" class="form-control" disabled>
 												<?php
 													$sql_don = "SELECT * FROM employee WHERE hak_akses='Supervisor' AND active='Aktif' ORDER BY nama_emp ASC";
 													$ress_don = mysqli_query($conn, $sql_don);
 													while($li = mysqli_fetch_array($ress_don)) {
-														echo '<option value="'. $li['npp'] .'">'. $li['nama_emp'].'</option>';
+														echo '<option value="'. $li['nip'] .'">'. $li['nama_emp'].'</option>';
 													}
 												?>
 											</select>

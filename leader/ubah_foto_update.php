@@ -1,11 +1,11 @@
 <?php
 include("sess_check.php");
 
-$npp=$_POST['npp'];
+$nip=$_POST['nip'];
 $foto=substr($_FILES["foto"]["name"],-5);
-$newfoto = "foto".$npp.$foto;
+$newfoto = "foto".$nip.$foto;
 
-	$sql = "UPDATE employee SET foto_emp='". $newfoto ."' WHERE npp='". $npp ."'";
+	$sql = "UPDATE employee SET foto_emp='". $newfoto ."' WHERE nip='". $nip ."'";
 	$ress = mysqli_query($conn, $sql);
 	if($ress){
 		move_uploaded_file($_FILES["foto"]["tmp_name"],"../foto/".$newfoto);

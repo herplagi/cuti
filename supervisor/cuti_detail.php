@@ -6,7 +6,7 @@ include("sess_check.php");
 include("dist/function/format_tanggal.php");
 if($_GET) {
 	$kode = $_GET['code'];
-	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp AND cuti.no_cuti='". $_GET['code'] ."'";
+	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND cuti.no_cuti='". $_GET['code'] ."'";
 	$query = mysqli_query($conn,$sql);
 	$result = mysqli_fetch_array($query);
 }
@@ -37,9 +37,9 @@ else {
 		<td colspan="3">&nbsp;</td>
 	</tr>
 	<tr>
-		<td width="20%"><b>NPP</b></td>
+		<td width="20%"><b>nip</b></td>
 		<td width="2%"><b>:</b></td>
-		<td width="78%"><?php echo $result['npp'];?></td>
+		<td width="78%"><?php echo $result['nip'];?></td>
 	</tr>
 	<tr>
 		<td colspan="3">&nbsp;</td>

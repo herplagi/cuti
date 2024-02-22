@@ -2,7 +2,7 @@
 	include("sess_check.php");
 	
 	// query database mencari data pengguna
-	$sql = "SELECT * FROM employee WHERE npp='". $sess_pegawaiid ."'";
+	$sql = "SELECT * FROM employee WHERE nip='". $sess_pegawaiid ."'";
 	$ress = mysqli_query($conn, $sql);
 	$data = mysqli_fetch_array($ress);
 	
@@ -35,7 +35,7 @@
 										<div class="col-sm-4">
 											<input type="password" name="password_old" class="form-control" placeholder="Password Lama" required>
 											<input type="hidden" name="password_old2" value="<?php echo $data['password'] ?>">
-											<input type="hidden" name="id_pengguna" value="<?php echo $data['npp'] ?>">
+											<input type="hidden" name="id_pengguna" value="<?php echo $data['nip'] ?>">
 										</div>
 									</div>
 									<div class="form-group">

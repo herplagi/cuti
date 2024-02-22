@@ -1,8 +1,8 @@
 <?php
 	include("sess_check.php");
 	
-	if(isset($_GET['npp'])) {
-		$sql = "SELECT * FROM employee WHERE npp='". $_GET['npp'] ."'";
+	if(isset($_GET['nip'])) {
+		$sql = "SELECT * FROM employee WHERE nip='". $_GET['nip'] ."'";
 		$ress = mysqli_query($conn, $sql);
 		$data = mysqli_fetch_array($ress);
 	}
@@ -12,11 +12,11 @@
 	include("layout_top.php");
 ?>
 <script type="text/javascript">
-	function checkNppAvailability() {
+	function checknipAvailability() {
 	$("#loaderIcon").show();
 	jQuery.ajax({
-		url: "check_nppavailability.php",
-		data:'npp='+$("#npp").val(),
+		url: "check_nipavailability.php",
+		data:'nip='+$("#nip").val(),
 		type: "POST",
 		success:function(data){
 			$("#user-availability-status").html(data);
@@ -47,15 +47,15 @@
 								<div class="panel-heading"><h3>Edit Data</h3></div>
 								<div class="panel-body">
 									<div class="form-group">
-										<label class="control-label col-sm-3">NPP</label>
+										<label class="control-label col-sm-3">nip</label>
 										<div class="col-sm-4">
-											<input type="text" name="npplama" class="form-control" placeholder="NPP" value="<?php echo $data['npp'] ?>" readonly>
+											<input type="text" name="niplama" class="form-control" placeholder="nip" value="<?php echo $data['nip'] ?>" readonly>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">NPP Baru (Abaikan jika tidak diubah)</label>
+										<label class="control-label col-sm-3">nip Baru (Abaikan jika tidak diubah)</label>
 										<div class="col-sm-4">
-											<input type="text" name="npp" onBlur="checkNppAvailability()" class="form-control" placeholder="NPP Baru (Abaikan Jika Tidak Ada Perubahan!)">
+											<input type="text" name="nip" onBlur="checknipAvailability()" class="form-control" placeholder="nip Baru (Abaikan Jika Tidak Ada Perubahan!)">
 											<span id="user-availability-status" style="font-size:12px;"></span>
 										</div>
 									</div>
@@ -82,9 +82,9 @@
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">Divisi</label>
+										<label class="control-label col-sm-3">unit_kerja</label>
 										<div class="col-sm-4">
-											<input type="text" name="divisi" class="form-control" placeholder="Divisi" value="<?php echo $data['divisi'] ?>" required>
+											<input type="text" name="unit_kerja" class="form-control" placeholder="unit_kerja" value="<?php echo $data['unit_kerja'] ?>" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -104,7 +104,7 @@
 										<div class="col-sm-3">
 											<select name="akses" id="akses" class="form-control" required>
 												<option value="<?php echo $data['hak_akses'] ?>" selected><?php echo $data['hak_akses'] ?></option>
-												<option value="Leader">Leader</option>
+												<option value="Kepala Unit">Kepala Unit</option>
 												<option value="Manager">Manager</option>
 												<option value="Pegawai">Pegawai</option>
 												<option value="Supervisor">Supervisor</option>

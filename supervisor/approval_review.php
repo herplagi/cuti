@@ -6,7 +6,7 @@
 	$menuparent = "approval";
 	include("layout_top.php");
 	$now = date('Y-m-d');
-	$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp AND cuti.no_cuti='$_GET[no]'";
+	$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND cuti.no_cuti='$_GET[no]'";
 	$Qry = mysqli_query($conn, $Sql);
 	$data = mysqli_fetch_array($Qry);
 
@@ -102,10 +102,10 @@ $(document).ready(function() {
 										<div class="col-sm-4">
 											<select name="mng" id="mng" class="form-control" disabled>
 												<?php
-													$sql_don = "SELECT * FROM employee WHERE hak_akses='Manager' AND active='Aktif' ORDER BY nama_emp ASC";
+													$sql_don = "SELECT * FROM employee WHERE hak_akses='General Manager' AND active='Aktif' ORDER BY nama_emp ASC";
 													$ress_don = mysqli_query($conn, $sql_don);
 													while($li = mysqli_fetch_array($ress_don)) {
-														echo '<option value="'. $li['npp'] .'">'. $li['nama_emp'].'</option>';
+														echo '<option value="'. $li['nip'] .'">'. $li['nama_emp'].'</option>';
 													}
 												?>
 											</select>

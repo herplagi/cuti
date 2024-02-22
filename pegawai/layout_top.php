@@ -11,7 +11,7 @@ $bulan = date("m");
 $tahun = date("Y");
 
 $id = $sess_pegawaiid;
-$sql_g = "SELECT * FROM employee WHERE npp='$id'";
+$sql_g = "SELECT * FROM employee WHERE nip='$id'";
 $ress_g = mysqli_query($conn, $sql_g);
 $res = mysqli_fetch_array($ress_g);
 ?>

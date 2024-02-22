@@ -2,7 +2,7 @@
 	include("sess_check.php");
 	
 	// query database mencari data pengguna
-	$sql = "SELECT * FROM employee WHERE npp='". $sess_spvid ."'";
+	$sql = "SELECT * FROM employee WHERE nip='". $sess_spvid ."'";
 	$ress = mysqli_query($conn, $sql);
 	$data = mysqli_fetch_array($ress);
 	
@@ -38,7 +38,7 @@
 										<label class="control-label col-sm-3">Ubah Foto</label>
 										<div class="col-sm-4">
 											<input type="file" name="foto" class="form-control" accept="image/*" required>
-											<input type="hidden" name="npp" value="<?php echo $data['npp'] ?>">
+											<input type="hidden" name="nip" value="<?php echo $data['nip'] ?>">
 										</div>
 										<div class="col-sm-4">
 											<button type="submit" name="perbarui" class="btn btn-warning">Update</button>

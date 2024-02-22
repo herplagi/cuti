@@ -6,7 +6,7 @@ $pagedesc = "Buat Pengajuan";
 $menuparent = "cuti";
 include("layout_top.php");
 $now = date('Y-m-d');
-$npp = $sess_leaderid;
+$nip = $sess_leaderid;
 ?>
 <script type="text/javascript">
 function valid()
@@ -49,7 +49,7 @@ function valid()
 										<div class="col-sm-4">
 											<input type="date" name="mulai" class="form-control" required>
 											<input type="hidden" name="now" class="form-control" value="<?php echo $now; ?>" required>
-											<input type="hidden" name="npp" class="form-control" value="<?php echo $npp; ?>" required>
+											<input type="hidden" name="nip" class="form-control" value="<?php echo $nip; ?>" required>
 										</div>
 									</div>
 									<div class="form-group">
@@ -72,14 +72,14 @@ function valid()
 												<?php
 												$mySql = "SELECT * FROM employee WHERE hak_akses='Supervisor' AND active='Aktif' ORDER BY nama_emp";
 												$myQry = mysqli_query($conn, $mySql);
-												$dataLeader = $result['npp'];
+												$dataLeader = $result['nip'];
 												while ($leaderData = mysqli_fetch_array($myQry)) {
-													if ($leaderData['npp'] == $dataLeader) {
+													if ($leaderData['nip'] == $dataLeader) {
 														$cek = " selected";
 													} else {
 														$cek = "";
 													}
-													echo "<option value='$leaderData[npp]' $cek>" . $leaderData['nama_emp'] . "</option>";
+													echo "<option value='$leaderData[nip]' $cek>" . $leaderData['nama_emp'] . "</option>";
 												}
 												?>
 											</select>

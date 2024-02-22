@@ -2,7 +2,7 @@
 	include("sess_check.php");
 	
 	// query database mencari data admin
-	$sql_e = "SELECT npp FROM employee WHERE active='Aktif'";
+	$sql_e = "SELECT nip FROM employee WHERE active='Aktif'";
 	$ress_e = mysqli_query($conn, $sql_e);
 	$e = mysqli_num_rows($ress_e);
 	

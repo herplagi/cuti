@@ -11,7 +11,7 @@
 		
 		if($password_old == $password_old2) {
 			if($password_new == $password_new2) {
-				$sql = "UPDATE employee SET password='". $password_new ."' WHERE npp='". $id_pengguna ."'";
+				$sql = "UPDATE employee SET password='". $password_new ."' WHERE nip='". $id_pengguna ."'";
 				$ress = mysqli_query($conn, $sql);
 				
 				header("location: pengaturan.php?act=update&msg=success");

@@ -6,7 +6,7 @@
 	$menuparent = "cuti";
 	include("layout_top.php");
 	$now = date('Y-m-d');
-	$npp = $sess_mngid;
+	$nip = $sess_mngid;
 ?>
 <script type="text/javascript">
 function valid()
@@ -49,7 +49,7 @@ function valid()
 										<div class="col-sm-4">
 											<input type="date" name="mulai" class="form-control" required>
 											<input type="hidden" name="now" class="form-control" value="<?php echo $now;?>" required>
-											<input type="hidden" name="npp" class="form-control" value="<?php echo $npp;?>" required>
+											<input type="hidden" name="nip" class="form-control" value="<?php echo $nip;?>" required>
 										</div>
 									</div>
 									<div class="form-group">

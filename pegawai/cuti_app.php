@@ -27,8 +27,8 @@
 						<div class="panel panel-default">
 							<div class="panel-body">
 						<?php
-								$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.npp=employee.npp AND cuti.hrd_app='1'
-									    AND cuti.npp='$id' ORDER BY cuti.tgl_pengajuan DESC";
+								$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND cuti.hrd_app='1'
+									    AND cuti.nip='$id' ORDER BY cuti.tgl_pengajuan DESC";
 								$Qry = mysqli_query($conn, $Sql);
 								
 							?>						
