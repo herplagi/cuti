@@ -326,17 +326,17 @@ table.dataTable thead .sorting:after {
 }
 
 .panel-red {
-    border-color: #d9534f;
+    border-color: #55433B;
 }
 
 .panel-red .panel-heading {
-    border-color: #d9534f;
+    border-color: #55433B;
     color: #fff;
-    background-color: #d9534f;
+    background-color: #55433B;
 }
 
 .panel-red a {
-    color: #d9534f;
+    color: #55433B;
 }
 
 .panel-red a:hover {

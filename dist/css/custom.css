@@ -10,7 +10,7 @@ body {
 }
 
 a {
-	 color: #3c763d;
+	 color: #014E60;
 }
 a:hover,
 a:focus,
@@ -69,7 +69,7 @@ h1.page-header {
 
 .sidebar ul li a.active {
     color: #ffffff;
-	background-color: #337ab7;
+	background-color: #014E60;
 	border-color: #4cae4c;
 }
 
