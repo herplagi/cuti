@@ -36,7 +36,7 @@
 									<thead>
 										<tr>
 											<th width="1%">No</th>
-											<th width="10%">NIP</th>
+											<th width="10%">No Cuti</th>
 											<th width="5%">Tgl Pengajuan</th>
 											<th width="5%">Tgl Awal</th>
 											<th width="5%">Tgl Akhir</th>
@@ -50,7 +50,7 @@
 											while($data = mysqli_fetch_array($Qry)){
 												echo '<tr>';
 												echo '<td class="text-center">'. $i .'</td>';
-												echo '<td class="text-center">'. $data['nip'] .'</td>';
+												echo '<td class="text-center">'. $data['no_cuti'] .'</td>';
 												echo '<td class="text-center">'. IndonesiaTgl($data['tgl_pengajuan']) .'</td>';
 												echo '<td class="text-center">'. IndonesiaTgl($data['tgl_awal']) .'</td>';
 												echo '<td class="text-center">'. IndonesiaTgl($data['tgl_akhir']) .'</td>';
