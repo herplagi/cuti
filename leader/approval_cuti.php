@@ -36,7 +36,7 @@ $id = $sess_leaderid;
 									<thead>
 										<tr>
 											<th width="1%">No</th>
-											<th width="10%">NIP</th>
+											<th width="10%">No cuti</th>
 											<th width="10%">Nama Pemohon</th>
 											<th width="5%">Tgl Pengajuan</th>
 											<th width="5%">Tgl Awal</th>
@@ -50,7 +50,7 @@ $id = $sess_leaderid;
 										while ($data = mysqli_fetch_array($Qry)) {
 											echo '<tr>';
 											echo '<td class="text-center">' . $i . '</td>';
-											echo '<td class="text-center">' . $data['nip'] . '</td>';
+											echo '<td class="text-center">' . $data['no_cuti'] . '</td>';
 											echo '<td class="text-center"><a href="#myModal" data-toggle="modal" data-load-nip="' . $data['nip'] . '" data-remote-target="#myModal .modal-body">' . $data['nama_emp'] . '</a></td>';
 											echo '<td class="text-center">' . IndonesiaTgl($data['tgl_pengajuan']) . '</td>';
 											echo '<td class="text-center">' . IndonesiaTgl($data['tgl_awal']) . '</td>';
