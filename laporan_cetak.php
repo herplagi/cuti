@@ -1,18 +1,36 @@
 <?php
 include("sess_check.php");
-
 include("dist/function/format_tanggal.php");
 include("dist/function/format_rupiah.php");
-$mulai = $_GET['awal'];
-$selesai = $_GET['akhir'];
-$sql = "SELECT cuti.*, employee.nama_emp, employee.unit_kerja FROM cuti JOIN employee ON cuti.nip=employee.nip
-            WHERE cuti.tgl_pengajuan BETWEEN '$mulai' AND '$selesai'
+
+if (isset($_GET['awal']) && isset($_GET['akhir'])) {
+    $mulai = $_GET['awal'];
+    $selesai = $_GET['akhir'];
+
+    // Filter berdasarkan unit jika dipilih
+    $unit_filter = '';
+    if (!empty($_GET['unit'])) {
+        $unit_filter = "AND employee.unit_kerja = '{$_GET['unit']}'";
+    }
+
+    // Query untuk mengambil data cuti berdasarkan periode dan unit yang dipilih
+    $sql = "SELECT cuti.*, employee.* FROM cuti 
+            INNER JOIN employee ON cuti.nip = employee.nip 
+            WHERE cuti.tgl_pengajuan BETWEEN '$mulai' AND '$selesai' $unit_filter 
             ORDER BY cuti.tgl_pengajuan DESC";
-$query = mysqli_query($conn, $sql);
-// deskripsi halaman
-$pagedesc = "Laporan Data Cuti - Periode " . IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai);
-$pagetitle = str_replace(" ", "_", $pagedesc);
+    $query = mysqli_query($conn, $sql);
+    
+    // Retrieve the first row to get the unit_kerja
+    $first_row = mysqli_fetch_assoc($query);
+    
+    // Reset query pointer to the beginning
+    mysqli_data_seek($query, 0);
+    
+    // deskripsi halaman
+    $pagedesc = "Laporan Data Cuti - Periode " . IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai);
+    $pagetitle = str_replace(" ", "_", $pagedesc);
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,12 +41,9 @@ $pagetitle = str_replace(" ", "_", $pagedesc);
     <meta name="description" content="">
     <meta name="author" content="universitas andalas">
 
-    <title>
-        <?php echo $pagetitle ?>
-    </title>
+    <title><?php echo $pagetitle ?></title>
 
     <link href="libs/images/KKSP.png" rel="icon" type="images/x-icon">
-
 
     <!-- Bootstrap Core CSS -->
     <link href="libs/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -78,13 +93,7 @@ $pagetitle = str_replace(" ", "_", $pagedesc);
     <section id="body-of-report">
         <div class="container-fluid">
             <h4 class="text-center">LAPORAN DATA CUTI</h4>
-            <h5 class="text-center">Periode
-                <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?>
-            </h5>
-            <?php
-            // Retrieve the first row to get the unit_kerja
-            $first_row = mysqli_fetch_assoc($query);
-            ?>
+            <h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?></h5>
             <h5 class="text-center">Unit Kerja: <?php echo $first_row['unit_kerja']; ?></h5>
             <br />
             <table class="table table-bordered table-keuangan">
@@ -102,8 +111,6 @@ $pagetitle = str_replace(" ", "_", $pagedesc);
                 <tbody>
                     <?php
                     $i = 1;
-                    // Reset query pointer to the beginning
-                    mysqli_data_seek($query, 0);
                     while ($data = mysqli_fetch_array($query)) {
                         echo '<tr>';
                         echo '<td class="text-center">' . $i . '</td>';
@@ -137,3 +144,4 @@ $pagetitle = str_replace(" ", "_", $pagedesc);
 </body>
 
 </html>
+<?php } ?>

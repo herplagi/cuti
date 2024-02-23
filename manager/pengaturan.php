@@ -2,7 +2,7 @@
 	include("sess_check.php");
 	
 	// query database mencari data pengguna
-	$sql = "SELECT * FROM employee WHERE nip='". $sess_spvid ."'";
+	$sql = "SELECT * FROM employee WHERE nip='". $sess_mngid ."'";
 	$ress = mysqli_query($conn, $sql);
 	$data = mysqli_fetch_array($ress);
 	

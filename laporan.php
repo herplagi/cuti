@@ -118,7 +118,7 @@ include("dist/function/format_tanggal.php");
                                         </tbody>
                                     </table>
                                     <div class="form-group">
-                                        <a href="laporan_cetak.php?awal=<?php echo $mulai; ?>&akhir=<?php echo $selesai; ?>" target="_blank" class="btn btn-warning">Cetak</a>
+									<a href="laporan_cetak.php?awal=<?php echo $mulai; ?>&akhir=<?php echo $selesai; ?>&unit=<?php echo $_GET['unit']; ?>" target="_blank" class="btn btn-warning">Cetak</a>
                                     </div>
                                 </div>
                                 <!-- Large modal -->
@@ -145,3 +145,4 @@ include("dist/function/format_tanggal.php");
         <?php
         include("layout_bottom.php");
         ?>
+"
