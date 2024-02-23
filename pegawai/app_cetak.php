@@ -1,17 +1,17 @@
 <?php
-	include("sess_check.php");
+include("sess_check.php");
 
-	include("dist/function/format_tanggal.php");
-	include("dist/function/format_rupiah.php");
-	$no 	 = $_GET['no'];
-	$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip
+include("dist/function/format_tanggal.php");
+include("dist/function/format_rupiah.php");
+$no = $_GET['no'];
+$sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip
 			AND cuti.no_cuti ='$no'";
-	$query = mysqli_query($conn,$sql);
-	$result = mysqli_fetch_array($query);
-	// deskripsi halaman
-	$pagedesc = "Cetak Form Cuti";
-	$pagetitle = str_replace(" ", "_", $pagedesc)
-?>
+$query = mysqli_query($conn, $sql);
+$result = mysqli_fetch_array($query);
+// deskripsi halaman
+$pagedesc = "Cetak Form Cuti";
+$pagetitle = str_replace(" ", "_", $pagedesc)
+	?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,11 +56,10 @@
 							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>KKSP</b> <br>
-						Jl. Maligi VII Lot Q-4C, Kawasan Industri KIIC, Sukaluyu, Kabupaten Karawang, Jawa Barat 17520<br>
-						Telp: (021) 89115030<br>
+						<b style="font-size:large">Koperasi Keluarga Semen Padang</b> <br>
+						Komplek PT. Semen Padang, Jl Raya Indarung, Kec. Lubuk Kilangan, Kota Padang, Sumatera Barat 25237 <br>
+						(0751)-777987<br>
 						<td class="text-right" width="20%">
-							<img src="libs/images/isk.jpg" alt="logo-dkm" width="130" height="70"/>
 						</td>
 					</tr>
 				</tbody>
@@ -80,7 +79,7 @@
 				<tbody>
 					<tr>
 						<td width="30%">No. Cuti</td>
-						<td><?php echo $result['no_cuti'];?></td>
+						<td><?php echo $result['no_cuti']; ?></td>
 					</tr>
 					<tr>
 						<td>nip</td>
@@ -92,39 +91,39 @@
 					</tr>
 					<tr>
 						<td>Telepon</td>
-						<td><?php echo $result['telp_emp'];?></td>
+						<td><?php echo $result['telp_emp']; ?></td>
 					</tr>
 					<tr>
 						<td>unit_kerja</td>
-						<td><?php echo $result['unit_kerja'];?></td>
+						<td><?php echo $result['unit_kerja']; ?></td>
 					</tr>
 					<tr>
 						<td>Jabatan</td>
-						<td><?php echo $result['jabatan'];?></td>
+						<td><?php echo $result['jabatan']; ?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Pengajuan</td>
-						<td><?php echo IndonesiaTgl($result['tgl_pengajuan']);?></td>
+						<td><?php echo IndonesiaTgl($result['tgl_pengajuan']); ?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Mulai</td>
-						<td><?php echo IndonesiaTgl($result['tgl_awal']);?></td>
+						<td><?php echo IndonesiaTgl($result['tgl_awal']); ?></td>
 					</tr>
 					<tr>
 						<td>Tanggal Akhir</td>
-						<td><?php echo IndonesiaTgl($result['tgl_akhir']);?></td>
+						<td><?php echo IndonesiaTgl($result['tgl_akhir']); ?></td>
 					</tr>
 					<tr>
 						<td>Durasi</td>
-						<td><?php echo $result['durasi'];?> Hari</td>
+						<td><?php echo $result['durasi']; ?> Hari</td>
 					</tr>
 					<tr>
 						<td>Keterangan</td>
-						<td><?php echo $result['keterangan'];?></td>
+						<td><?php echo $result['keterangan']; ?></td>
 					</tr>
 					<tr>
 						<td>Status</td>
-						<td><?php echo $result['stt_cuti'];?></td>
+						<td><?php echo $result['stt_cuti']; ?></td>
 					</tr>
 				</tbody>
 				</h3>
