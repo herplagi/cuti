@@ -65,10 +65,10 @@ function valid()
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">Manager</label>
+										<label class="control-label col-sm-3">General Manager</label>
 										<div class="col-sm-4">
 											<select name="mng" id="mng" class="form-control" required>
-											<option value="" selected>======== Pilih Manager ========</option>
+											<option value="" selected>======== Pilih General Manager ========</option>
 												<?php
 												$mySql = "SELECT * FROM employee WHERE hak_akses='General Manager' AND active='Aktif' ORDER BY nama_emp";
 												$myQry = mysqli_query($conn, $mySql);

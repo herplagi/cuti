@@ -14,7 +14,7 @@ $int = $start->diff($finish);
 $dur = $int->days;
 $durasi = $dur+1;
 
-$stt = "Menunggu Approval Supervisor";
+$stt = "Menunggu Approval Senior Manager";
 
 $id = date('dmYHis');
 

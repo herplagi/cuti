@@ -105,9 +105,9 @@
 											<select name="akses" id="akses" class="form-control" required>
 												<option value="<?php echo $data['hak_akses'] ?>" selected><?php echo $data['hak_akses'] ?></option>
 												<option value="Kepala Unit">Kepala Unit</option>
-												<option value="Manager">Manager</option>
+												<option value="General Manager">General Manager</option>
 												<option value="Pegawai">Pegawai</option>
-												<option value="Supervisor">Supervisor</option>
+												<option value="Senior Manager">Senior Manager</option>
 											</select>
 										</div>
 									</div>

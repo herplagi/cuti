@@ -28,7 +28,7 @@
 							<div class="panel-body">
 						<?php
 								$Sql = "SELECT cuti.*, employee.* FROM cuti, employee WHERE cuti.nip=employee.nip AND 
-										cuti.gen_manager='$id' AND cuti.stt_cuti='Menunggu Approval Manager' ORDER BY cuti.tgl_pengajuan DESC";
+										cuti.gen_manager='$id' AND cuti.stt_cuti='Menunggu Approval General Manager' ORDER BY cuti.tgl_pengajuan DESC";
 								$Qry = mysqli_query($conn, $Sql);
 								
 							?>						
