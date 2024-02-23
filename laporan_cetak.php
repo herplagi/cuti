@@ -89,45 +89,45 @@ if (isset($_GET['awal']) && isset($_GET['akhir'])) {
                         </div>
                     </section>
 
-                    <section id="body-of-report">
-                        <div class="container-fluid">
-                            <h4 class="text-center">LAPORAN DATA CUTI</h4>
-                            <h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?></h5>
-                            <h5 class="text-center">Unit Kerja: <?php echo $first_row['unit_kerja']; ?></h5>
-                            <br />
-                            <table class="table table-bordered table-keuangan">
-                                <thead>
-                                    <tr>
-                                        <th width="1%">No</th>
-                                        <th width="5%">NIP</th>
-                                        <th width="10%">Nama Pemohon</th>
-                                        <th width="5%">Tgl Pengajuan</th>
-                                        <th width="5%">Tgl Awal</th>
-                                        <th width="5%">Tgl Akhir</th>
-                                        <th width="10%">Keterangan</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <?php
-                                    $i = 1;
-                                    while ($data = mysqli_fetch_array($query)) {
-                                        echo '<tr>';
-                                        echo '<td class="text-center">' . $i . '</td>';
-                                        echo '<td>' . $data['nip'] . '</td>';
-                                        echo '<td>' . $data['nama_emp'] . '</td>';
-                                        echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
-                                        echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
-                                        echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
-                                        echo '<td>' . $data['keterangan'] . '</td>';
-                                        echo '</tr>';
-                                        $i++;
-                                    }
-                                    ?>
-                                </tbody>
-                            </table>
-                            <br />
-                        </div><!-- /.container -->
-                    </section>
+    <section id="body-of-report">
+        <div class="container-fluid">
+            <h4 class="text-center">LAPORAN DATA CUTI</h4>
+            <h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?></h5>
+            <h5 class="text-center">Unit Kerja : <?php echo $first_row['unit_kerja']; ?></h5>
+            <br />
+            <table class="table table-bordered table-keuangan">
+                <thead>
+                    <tr>
+                        <th width="1%">No</th>
+                        <th width="5%">NIP</th>
+                        <th width="10%">Nama Pemohon</th>
+                        <th width="5%">Tgl Pengajuan</th>
+                        <th width="5%">Tgl Awal</th>
+                        <th width="5%">Tgl Akhir</th>
+                        <th width="10%">Keterangan</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $i = 1;
+                    while ($data = mysqli_fetch_array($query)) {
+                        echo '<tr>';
+                        echo '<td class="text-center">' . $i . '</td>';
+                        echo '<td>' . $data['nip'] . '</td>';
+                        echo '<td>' . $data['nama_emp'] . '</td>';
+                        echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
+                        echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
+                        echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
+                        echo '<td>' . $data['keterangan'] . '</td>';
+                        echo '</tr>';
+                        $i++;
+                    }
+                    ?>
+                </tbody>
+            </table>
+            <br />
+        </div><!-- /.container -->
+    </section>
 
                     <script type="text/javascript">
                         $(document).ready(function () {

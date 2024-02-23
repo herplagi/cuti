@@ -44,9 +44,9 @@ $(document).ready(function() {
 								<div class="panel-heading"><h3>Review Pengajuan Cuti</h3></div>
 								<div class="panel-body">
 									<div class="form-group">
-										<label class="control-label col-sm-3">No. Cuti</label>
+										<label class="control-label col-sm-3">NIP</label>
 										<div class="col-sm-4">
-											<input type="text" name="no" class="form-control" value="<?php echo $data['no_cuti'];?>" readonly>
+											<input type="text" name="no" class="form-control" value="<?php echo $data['nip'];?>" readonly>
 										</div>
 									</div>
 									<div class="form-group">

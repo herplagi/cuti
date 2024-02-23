@@ -20,6 +20,14 @@ include("layout_top.php");
 		error:function (){}
 	});
 	}
+
+	function validateForm() {
+		var nip = document.forms["karyawanForm"]["nip"].value;
+		if (nip == "") {
+			alert("NIP tidak boleh kosong");
+			return false;
+		}
+	}
 </script>
 <!-- top of file -->
 		<!-- Page Content -->
@@ -37,14 +45,14 @@ include("layout_top.php");
 				
 				<div class="row">
 					<div class="col-lg-12">
-						<form class="form-horizontal" action="karyawan_insert.php" method="POST" enctype="multipart/form-data">
+						<form class="form-horizontal" action="karyawan_insert.php" method="POST" enctype="multipart/form-data" onsubmit="return validateForm()">
 							<div class="panel panel-default">
 								<div class="panel-heading"><h3>Tambah Data</h3></div>
 								<div class="panel-body">
 									<div class="form-group">
 										<label class="control-label col-sm-3">NIP</label>
 										<div class="col-sm-4">
-											<input type="text" name="nip" onBlur="checknipAvailability()" class="form-control" placeholder="NIP" required>
+											<input type="text" name="nip" id="nip" onBlur="checknipAvailability()" class="form-control" placeholder="NIP" required>
 											<span id="user-availability-status" style="font-size:12px;"></span>
 										</div>
 									</div>
