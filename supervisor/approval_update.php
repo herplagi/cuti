@@ -19,7 +19,7 @@ if($aksi=="2"){
 		header("location: approval_cuti.php?act=update&msg=success");
 	
 }else{
-	$stt="Menunggu Approval Manager";
+	$stt="Menunggu Approval General Manager";
 	$num	=1;
 	$sql = "UPDATE cuti SET
 			stt_cuti='". $stt ."',

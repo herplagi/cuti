@@ -20,7 +20,7 @@
 	$ressa = mysqli_query($conn, $sqla);
 	$a = mysqli_num_rows($ressa);
 
-	$sqld = "SELECT * FROM cuti WHERE sen_manager='$id' AND stt_cuti='Menunggu Approval Supervisor'";
+	$sqld = "SELECT * FROM cuti WHERE sen_manager='$id' AND stt_cuti='Menunggu Approval Senior Manager'";
 	$ressd = mysqli_query($conn, $sqld);
 	$d = mysqli_num_rows($ressd);
 
