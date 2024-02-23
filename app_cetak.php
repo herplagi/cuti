@@ -56,11 +56,10 @@ $pagetitle = str_replace(" ", "_", $pagedesc)
 							<img src="libs/images/KKSP.png" alt="logo-dkm" width="70" />
 						</td>
 						<td class="text-center" width="60%">
-						<b>KKSP</b> <br>
+						<b style="font-size:large">Koperasi Keluarga Semen Padang</b> <br>
 						Komplek PT. Semen Padang, Jl Raya Indarung, Kec. Lubuk Kilangan, Kota Padang, Sumatera Barat 25237 <br>
 						(0751)-777987<br>
 						<td class="text-right" width="20%">
-							<img src="libs/images/KKSP.png" alt="logo-dkm" height="70"/>
 						</td>
 					</tr>
 				</tbody>	

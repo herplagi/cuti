@@ -37,7 +37,7 @@ include("dist/function/format_tanggal.php");
                                 </div>
                                 <div class="col-sm-4">
                                     <label>Unit</label><br>
-                                    <select name="unit" id="unit" style="width: 200px; height: 33.5px; border-color:#b7b9bd; border-radius: 5px;">
+                                    <select name="unit" id="unit" style="width: 200px; height: 33.5px; border-color:#b7b9bd; border-radius: 5px;" required>
                                         <option value="" disabled selected>Pilih Unit...</option>
                                         <option value="Umum">Umum & Legal</option>
                                         <option value="Akuntansi">Akuntansi</option>
@@ -83,48 +83,48 @@ include("dist/function/format_tanggal.php");
                     $query = mysqli_query($conn, $sql);
                     ?>
 
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="panel panel-default">
-                                <div class="panel-body">
-                                    <table class="table table-striped table-bordered table-hover" id="tabel-data">
-                                        <thead>
-                                            <tr>
-                                                <th width="1%">No</th>
-                                                <th width="10%">NIP</th>
-                                                <th width="10%">Nama Karyawan</th>
-                                                <th width="5%">Tgl Pengajuan</th>
-                                                <th width="5%">Tgl Awal</th>
-                                                <th width="5%">Tgl Akhir</th>
-                                                <th width="5%">Keterangan</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <?php
-                                            $i = 1;
-                                            while ($data = mysqli_fetch_array($query)) {
-                                                echo '<tr>';
-                                                echo '<td class="text-center">' . $i . '</td>';
-                                                echo '<td>' . $data['nip'] . '</td>';
-                                                echo '<td>' . $data['nama_emp'] . '</td>';
-                                                echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
-                                                echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
-                                                echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
-                                                echo '<td>' . $data['keterangan'] . '</td>';
-                                                echo '</tr>';
-                                                $i++;
-                                            }
-                                            ?>
-                                        </tbody>
-                                    </table>
-                                    <div class="form-group">
-									<a href="laporan_cetak.php?awal=<?php echo $mulai; ?>&akhir=<?php echo $selesai; ?>&unit=<?php echo $_GET['unit']; ?>" target="_blank" class="btn btn-warning">Cetak</a>
-                                    </div>
-                                </div>
-                                <!-- Large modal -->
-                            </div><!-- /.panel -->
-                        </div><!-- /.col-lg-12 -->
-                    </div><!-- /.row -->
+                                        <div class="row">
+                                            <div class="col-lg-12">
+                                                <div class="panel panel-default">
+                                                    <div class="panel-body">
+                                                        <table class="table table-striped table-bordered table-hover" id="tabel-data">
+                                                            <thead>
+                                                                <tr>
+                                                                    <th width="1%">No</th>
+                                                                    <th width="10%">NIP</th>
+                                                                    <th width="10%">Nama Karyawan</th>
+                                                                    <th width="5%">Tgl Pengajuan</th>
+                                                                    <th width="5%">Tgl Awal</th>
+                                                                    <th width="5%">Tgl Akhir</th>
+                                                                    <th width="5%">Keterangan</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <?php
+                                                                $i = 1;
+                                                                while ($data = mysqli_fetch_array($query)) {
+                                                                    echo '<tr>';
+                                                                    echo '<td class="text-center">' . $i . '</td>';
+                                                                    echo '<td>' . $data['nip'] . '</td>';
+                                                                    echo '<td>' . $data['nama_emp'] . '</td>';
+                                                                    echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_pengajuan']) . '</td>';
+                                                                    echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_awal']) . '</td>';
+                                                                    echo '<td class="text-center text-nowrap">' . format_tanggal($data['tgl_akhir']) . '</td>';
+                                                                    echo '<td>' . $data['keterangan'] . '</td>';
+                                                                    echo '</tr>';
+                                                                    $i++;
+                                                                }
+                                                                ?>
+                                                            </tbody>
+                                                        </table>
+                                                        <div class="form-group">
+                                                            <a href="laporan_cetak.php?awal=<?php echo $mulai; ?>&akhir=<?php echo $selesai; ?>&unit=<?php echo $_GET['unit']; ?>" target="_blank" class="btn btn-warning">Cetak</a>
+                                                        </div>
+                                                    </div>
+                                                    <!-- Large modal -->
+                                                </div><!-- /.panel -->
+                                            </div><!-- /.col-lg-12 -->
+                                        </div><!-- /.row -->
                 <?php } ?>
             </div><!-- /.container-fluid -->
         </div><!-- /#page-wrapper -->
