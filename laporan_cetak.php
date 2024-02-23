@@ -94,7 +94,7 @@ if (isset($_GET['awal']) && isset($_GET['akhir'])) {
         <div class="container-fluid">
             <h4 class="text-center">LAPORAN DATA CUTI</h4>
             <h5 class="text-center">Periode <?php echo IndonesiaTgl($mulai) . " - " . IndonesiaTgl($selesai) ?></h5>
-            <h5 class="text-center">Unit Kerja: <?php echo $first_row['unit_kerja']; ?></h5>
+            <h5 class="text-center">Unit Kerja : <?php echo $first_row['unit_kerja']; ?></h5>
             <br />
             <table class="table table-bordered table-keuangan">
                 <thead>
