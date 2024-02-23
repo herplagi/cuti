@@ -47,7 +47,7 @@ include("dist/function/format_rupiah.php");
 				<div class="row">
 					<div class="col-lg-4 col-md-4">
 						<div class="panel panel-primary">
-							<div class="panel-heading">
+							<div class="panel-heading" style="background-color: #008165;">
 								<div class="row">
 									<div class="col-xs-3">
 										<i class="fa fa-check-circle fa-3x"></i>
@@ -59,7 +59,7 @@ include("dist/function/format_rupiah.php");
 								</div>
 							</div>
 							<a href="cuti_app.php">
-								<div class="panel-footer">
+								<div class="panel-footer" style="color:#008165">
 									<span class="pull-left">Lihat Rincian</span>
 									<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
 									<div class="clearfix"></div>
