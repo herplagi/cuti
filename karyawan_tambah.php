@@ -1,10 +1,10 @@
 <?php
-include("sess_check.php");
+include ("sess_check.php");
 
 // deskripsi halaman
 $pagedesc = "Data Karyawan";
 $menuparent = "master";
-include("layout_top.php");
+include ("layout_top.php");
 ?>
 <script type="text/javascript">
 	function checknipAvailability() {
@@ -40,7 +40,7 @@ include("layout_top.php");
 				</div><!-- /.row -->
 
 				<div class="row">
-					<div class="col-lg-12"><?php include("layout_alert.php"); ?></div>
+					<div class="col-lg-12"><?php include ("layout_alert.php"); ?></div>
 				</div>
 				
 				<div class="row">
@@ -140,6 +140,12 @@ include("layout_top.php");
 								</div>
 								<div class="panel-footer">
 									<button type="submit" name="simpan" class="btn btn-success">Simpan</button>
+									<button class="btn btn-danger" onclick="cancel()">Cancel</button>
+									<script>
+										function cancel() {
+											window.history.back(); 
+										}
+									</script>
 								</div>
 							</div><!-- /.panel -->
 						</form>
@@ -149,5 +155,5 @@ include("layout_top.php");
 		</div><!-- /#page-wrapper -->
 <!-- bottom of file -->
 <?php
-include("layout_bottom.php");
+include ("layout_bottom.php");
 ?>

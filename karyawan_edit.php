@@ -47,15 +47,15 @@ include ("layout_top.php");
 								<div class="panel-heading"><h3>Edit Data</h3></div>
 								<div class="panel-body">
 									<div class="form-group">
-										<label class="control-label col-sm-3">nip</label>
+										<label class="control-label col-sm-3">NIP</label>
 										<div class="col-sm-4">
 											<input type="text" name="niplama" class="form-control" placeholder="nip" value="<?php echo $data['nip'] ?>" readonly>
 										</div>
 									</div>
 									<div class="form-group">
-										<label class="control-label col-sm-3">nip Baru (Abaikan jika tidak diubah)</label>
+										<label class="control-label col-sm-3">NIP Baru (Abaikan jika tidak diubah)</label>
 										<div class="col-sm-4">
-											<input type="text" name="nip" onBlur="checknipAvailability()" class="form-control" placeholder="nip Baru (Abaikan Jika Tidak Ada Perubahan!)">
+											<input type="text" name="nip" id="nip" onBlur="checknipAvailability()" class="form-control" placeholder="NIP Baru (Abaikan Jika Tidak Ada Perubahan!)">
 											<span id="user-availability-status" style="font-size:12px;"></span>
 										</div>
 									</div>
@@ -159,6 +159,7 @@ include ("layout_top.php");
 								</div>
 								<div class="panel-footer">
 									<button type="submit" name="perbarui" class="btn btn-success">Update</button>
+									<button type="submit" name="cancel" onclick="cancelEdit()" class="btn btn-danger">Cancel</button>
 								</div>
 							</div><!-- /.panel -->
 						</form>
@@ -170,3 +171,9 @@ include ("layout_top.php");
 <?php
 include ("layout_bottom.php");
 ?>
+<!-- <script>
+	// Fungsi untuk mengarahkan kembali ke halaman sebelumnya saat tombol "Cancel" ditekan
+	function cancelEdit() {
+		window.history.back(); // Mengarahkan kembali ke halaman sebelumnya dalam riwayat perambanan
+	}
+</script> -->
