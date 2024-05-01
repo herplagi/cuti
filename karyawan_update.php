@@ -102,7 +102,7 @@ if (isset($_POST['perbarui'])) {
 }
 function redirectBack()
 {
-	header("Location: karyawan.php?act=update&msg= "); // Menggunakan referer untuk kembali ke halaman sebelumnya
+	header("Location: karyawan.php"); // Menggunakan referer untuk kembali ke halaman sebelumnya
 	exit;
 }
 if (isset($_POST['cancel'])) {
