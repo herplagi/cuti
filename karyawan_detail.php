@@ -103,7 +103,7 @@ if ($_GET) {
 		<td width="20%"><b>Aktif</b></td>
 		<td width="2%"><b>:</b></td>
 		<td width="78%"><?php
-		if ($result['active'] == 1) {
+		if ($result['active'] == "Aktif") {
 			echo "Ya";
 		} else {
 			echo "Tidak";
